@@ -31,7 +31,7 @@ items:
                 secretKeyRef:
                   key: bot.fb_page_token.key
                   name: hasura-secrets
-                  - name: OPEN_WEATHER_TOKEN
+            - name: OPEN_WEATHER_TOKEN
               valueFrom:
                 secretKeyRef:
                   key: bot.open_weather_token.key
