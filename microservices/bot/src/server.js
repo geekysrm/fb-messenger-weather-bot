@@ -135,9 +135,11 @@ function getCityWeather(senderId, cityName) {
     if (!err && response.statusCode == 200) {
       let json = JSON.parse(body);
       console.log(json);
-      let tempF = ~~(json.main.temp * 9 / 5 - 459.67);
-      let tempC = ~~(json.main.temp - 273.15);
-      let msg = 'The current condition in ' + json.name + ' is ' + json.weather[0].description + ' and the temperature is ' + tempF + ' ℉ (' + tempC + ' ℃).'
+      // let tempF = ~~(json.main.temp * 9 / 5 - 459.67);
+      // let tempC = ~~(json.main.temp - 273.15);
+      // let msg = 'The current condition in ' + json.name + ' is ' + json.weather[0].description + ' and the temperature is ' + tempC + ' C (' + tempF + ' F).'
+      let temp = json.main.temp;
+      let msg = 'Temperature is ' + temp;
       showTypingIndicatorToUser(senderId, true);
       sendMessageToUser(senderId, msg);
     } else {
