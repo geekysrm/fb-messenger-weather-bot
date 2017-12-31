@@ -129,7 +129,7 @@ function showTypingIndicatorToUser(senderId, isTyping) {
 
 
 function getCityWeather(senderId, cityName) {
-  let restUrl = WEATHER_BASE_URL + WEATHER_API_KEY + '&q=' + cityName;
+  let restUrl = WEATHER_BASE_URL + OPEN_WEATHER_TOKEN + '&q=' + cityName;
   request.get(restUrl, (err, response, body) => {
     if (!err && response.statusCode == 200) {
       let json = JSON.parse(body);
