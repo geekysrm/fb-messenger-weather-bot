@@ -26,15 +26,15 @@ items:
                 secretKeyRef:
                   key: bot.fb_verify_token.key
                   name: hasura-secrets
+	    - name: OPEN_WEATHER_TOKEN
+	      valueFrom:
+                secretKeyRef:
+                  key: bot.open_weather_token.key
+                  name: hasura-secrets
             - name: FACEBOOK_PAGE_ACCESS_TOKEN
               valueFrom:
                 secretKeyRef:
                   key: bot.fb_page_token.key
-                  name: hasura-secrets
-            - name: MOVIE_DB_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  key: bot.movie_db_token.key
                   name: hasura-secrets
           imagePullPolicy: IfNotPresent
           name: bot
