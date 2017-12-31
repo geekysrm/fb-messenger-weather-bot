@@ -137,13 +137,15 @@ function getCityWeather(senderId, cityName) {
       console.log(json);
       let fahr = Math.round(json.main.temp);
       let cels = Math.round((fahr - 32) * 5/9);
-      let msg = 'The current weather condition in ' + json.name + ' is ' + json.weather[0].description + ' and the temperature is ' + cels + '°C (' + fahr + '°F).'
+      let msg = 'The current weather condition in ' + json.name + ' is ' + json.weather[0].description + ' and the temperature is ' + cels + ' °C (' + fahr + ' °F).'
       showTypingIndicatorToUser(senderId, true);
       sendMessageToUser(senderId, msg);
+      showTypingIndicatorToUser(senderId, false);
     } else {
-      let errorMessage = 'Could not find any information on ' + cityName + ' .';
+      let errorMessage = 'Could not find any information on city: ' + cityName + ' .';
       showTypingIndicatorToUser(senderId, true);
       sendMessageToUser(senderId, errorMessage);
+      showTypingIndicatorToUser(senderId, false);
     }
   })
 }
