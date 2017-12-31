@@ -129,6 +129,7 @@ function showTypingIndicatorToUser(senderId, isTyping) {
 
 
 function getCityWeather(senderId, cityName) {
+  showTypingIndicatorToUser(senderId, true);
   let restUrl = WEATHER_BASE_URL + OPEN_WEATHER_TOKEN + '&q=' + cityName;
   request.get(restUrl, (err, response, body) => {
     if (!err && response.statusCode == 200) {
@@ -137,9 +138,11 @@ function getCityWeather(senderId, cityName) {
       let tempF = ~~(json.main.temp * 9 / 5 - 459.67);
       let tempC = ~~(json.main.temp - 273.15);
       let msg = 'The current condition in ' + json.name + ' is ' + json.weather[0].description + ' and the temperature is ' + tempF + ' ℉ (' + tempC + ' ℃).'
+      showTypingIndicatorToUser(senderId, true);
       sendMessageToUser(senderId, msg);
     } else {
       let errorMessage = 'Could not find any information on ' + cityName + ' .';
+      showTypingIndicatorToUser(senderId, true);
       sendMessageToUser(senderId, errorMessage);
     }
   })
