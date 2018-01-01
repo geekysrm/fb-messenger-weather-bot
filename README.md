@@ -1,4 +1,4 @@
-# Building a Facebook Messenger Weather Bot on Hasura
+# Building a Weather Bot for Facebook Messenger on Hasura
 
 This tutorial is a guide to run a **Weather bot on facebook messenger**, which when given a city/place name replies back with the current weather condition and temperatures in °C and °F.
 
@@ -119,8 +119,12 @@ Next, open up your facebook page.
 Test out your bot. On receiving a city/place name, it should reply back with the current weather conditions along with the temperatures in °Celsius and °Fahrenheit. 
 
 **Here is the bot in action**
+
+
 ![Weather Bot in Action](https://raw.githubusercontent.com/geekysrm/fb-messenger-weather-bot/master/assets/bot_in_action.gif "Weather Bot in Action")
 
 ## Support
 
 If you happen to get stuck anywhere, feel free to raise an issue [here](https://github.com/geekysrm/fb-messenger-weather-bot/issues)
+
+Also, you can contact me via [email](mailto:soumyacool2012@gmail.com) or [twitter](https://twitter.com/SoumyaRnMohanty) or [facebook](https://www.fb.com/geekysrm).
