@@ -3,19 +3,15 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 
-let OPEN_WEATHER_TOKEN = process.env.OPEN_WEATHER_TOKEN;
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 let FACEBOOK_VERIFY_TOKEN = process.env.FACEBOOK_VERIFY_TOKEN;
 let FACEBOOK_PAGE_ACCESS_TOKEN = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
 let FACEBOOK_SEND_MESSAGE_URL = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + FACEBOOK_PAGE_ACCESS_TOKEN;
-let MOVIE_DB_PLACEHOLDER_URL = 'http://image.tmdb.org/t/p/w185/';
-let MOVIE_DB_BASE_URL = 'https://www.themoviedb.org/movie/';
 let WEATHER_BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?units=imperial&APPID=';
+let OPEN_WEATHER_TOKEN = process.env.OPEN_WEATHER_TOKEN;
 
-//your routes here
 app.get('/', function (req, res) {
   res.send("Hello World, I am a facebook bot.")
 });
@@ -149,7 +145,6 @@ function getCityWeather(senderId, cityName) {
     }
   })
 }
-
 
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
