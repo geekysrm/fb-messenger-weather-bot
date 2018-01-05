@@ -1,7 +1,6 @@
 description: A facebook messenger weather bot deployed on Hasura.
-keywords: bot, facebook, weather, nodejs, express, node, javascript, messenger, weather bot,
-  chatbot, weather messenger bot, fb bot, fb messenger bot
-repoUrl: https://github.com/geekysrm/fb-messenger-weather-bot
+keywords: bot, facebook, weather, nodejs, express, node, javascript, messenger, weather
+  bot, chatbot, weather messenger bot, fb bot, fb messenger bot
 media: {}
 name: fb-messenger-weather-bot
 platformVersion: v0.15.3

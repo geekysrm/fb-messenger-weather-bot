@@ -1,8 +1,12 @@
 # Building a Weather Bot for Facebook Messenger on Hasura
 
+![Weather Bot in Action](https://raw.githubusercontent.com/geekysrm/fb-messenger-weather-bot/master/assets/bot_in_action.gif "Weather Bot in Action")
+
 This tutorial is a guide to run a **Weather bot on facebook messenger**, which when given a city/place name replies back with the current weather condition and temperatures in °C and °F.
 
 For the chat bot to function we'll need a server that will receive the messages sent by the Facebook users, process this message and respond back to the user. To send messages back to the server we will use the graph API provided by Facebook. For the Facebook servers to talk to our server, the endpoint URL of our server should be accessible to the Facebook server and should use a secure HTTPS URL. For this reason, running our server locally will not work and instead we need to host our server online. In this tutorial, we are going to deploy our server on Hasura which automatically provides SSL-enabled domains.
+
+You can get the full code for the project from this [Github repository](https://github.com/geekysrm/fb-messenger-weather-bot/).
 
 ## Pre-requisites
 
@@ -74,16 +78,16 @@ You will get an output like so:
 INFO Getting microservices...                     
 INFO Custom microservices:                        
 NAME   STATUS    INTERNAL-URL(tcp,http)   EXTERNAL-URL
-bot    Running   bot.default              https://bot.inquisitive20.hasura-app.io
+bot    Running   bot.default              http://bot.inquisitive20.hasura-app.io
 
 INFO Hasura microservices:                        
 NAME            STATUS    INTERNAL-URL(tcp,http)   EXTERNAL-URL
-auth            Running   auth.hasura              https://auth.inquisitive20.hasura-app.io
-data            Running   data.hasura              https://data.inquisitive20.hasura-app.io
-filestore       Running   filestore.hasura         https://filestore.inquisitive20.hasura-app.io
+auth            Running   auth.hasura              http://auth.inquisitive20.hasura-app.io
+data            Running   data.hasura              http://data.inquisitive20.hasura-app.io
+filestore       Running   filestore.hasura         http://filestore.inquisitive20.hasura-app.io
 gateway         Running   gateway.hasura           
 le-agent        Running   le-agent.hasura          
-notify          Running   notify.hasura            https://notify.inquisitive20.hasura-app.io
+notify          Running   notify.hasura            http://notify.inquisitive20.hasura-app.io
 platform-sync   Running   platform-sync.hasura     
 postgres        Running   postgres.hasura          
 session-redis   Running   session-redis.hasura     
@@ -91,7 +95,8 @@ sshd            Running   sshd.hasura
 vahana          Running   vahana.hasura
 ```
 
-Find the EXTERNAL-URL for the service named `bot`(in this case -> https://bot.inquisitive20.hasura-app.io).
+Find the EXTERNAL-URL for the service named `bot` and keep a note of it after changing the `http` to `https` in the URL. 
+(For example, in this case -> https://bot.inquisitive20.hasura-app.io).
 
 ### Enabling webhooks
 
